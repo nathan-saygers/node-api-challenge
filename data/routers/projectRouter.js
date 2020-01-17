@@ -58,4 +58,17 @@ router.delete('/:id', (req, res) => {
     })
 })
 
+router.get('/:id', (req, res) => {
+  const id = req.params.id;
+
+  projectActions.getProjectActions(id)
+    .then(actions => {
+      res.status(200).json(actions)
+    })
+    .catch(error => {
+      console.log(error)
+      res.status(500).json({error: "The server encountered an issue completing your request"})
+    })
+})
+
 module.exports = router;

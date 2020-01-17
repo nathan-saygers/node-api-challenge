@@ -15,7 +15,7 @@ server.use(morgan('short'));
 // server.use routers
 
 server.use('/api/project', projectRouter);
-server.use('/api/project/:id/actions', actionRouter);
+server.use('/api/project/actions/', actionRouter);
 
 const port = process.env.PORT || 4000;
 
